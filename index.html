@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plant-Shop</title>
+    <link
+      rel="shortcut icon"
+      href="https://img.icons8.com/?size=96&id=qIF4XIx-ZSGt&format=png"
+      type="image/x-icon"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5.0.0/themes.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <style>
+      .my-nav-text {
+        position: absolute;
+        opacity: 0;
+        transition: padding-right 0.5s, position 0s, opacity 0s;
+        padding-right: 0;
+      }
+      .my-nav:hover .my-nav-text {
+        opacity: 1;
+        position: static;
+
+        padding-right: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="sticky top-0 z-10 glass">
+      <div class="navbar shadow-sm px-10">
+        <div class="flex-1">
+          <a class="text-xl flex items-center">
+            <img
+              class="w-8"
+              src="https://img.icons8.com/?size=96&id=qIF4XIx-ZSGt&format=png"
+              alt=""
+            />
+            <span
+              class="bg-gradient-to-tr text-transparent bg-clip-text from-green-600 to-lime-300"
+            >
+              Plant-Shop</span
+            ></a
+          >
+        </div>
+        <div class="flex-none space-x-3">
+          <div class="dropdown dropdown-end">
+            <div
+              tabindex="0"
+              role="button"
+              class="btn btn-base-300 btn-circle avatar"
+            >
+              <div class="w-7 rounded-full">
+                <img
+                  alt="Tailwind CSS Navbar component"
+                  src="https://img.icons8.com/?size=48&id=ABBSjQJK83zf&format=png"
+                />
+              </div>
+            </div>
+            <ul
+              tabindex="0"
+              class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+            >
+              <li>
+                <a class="justify-between">
+                  Profile
+                  <span class="badge">New</span>
+                </a>
+              </li>
+              <li><a>Settings</a></li>
+              <li><a>Logout</a></li>
+            </ul>
+          </div>
+          <div class="dropdown dropdown-end">
+            <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+              <div class="indicator">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                  />
+                </svg>
+                <span id="cart-total" class="badge badge-sm indicator-item"
+                  >0</span
+                >
+              </div>
+            </div>
+            <div
+              tabindex="0"
+              class="card card-compact dropdown-content bg-base-100 z-1 mt-3 w-52 shadow"
+            >
+              <div class="card-body">
+                <span class="text-lg font-bold">
+                  <span id="cart-count">0</span> Items</span
+                >
+                <span class="text-info"
+                  >Subtotal: $ <span id="sum-total">0</span></span
+                >
+                <div class="card-actions">
+                  <button class="btn btn-success text-white btn-block">
+                    View cart
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <header>
+      <nav class="bg-base-300">
+        <ul
+          class="menu menu-horizontal justify-center w-full rounded-box gap-5"
+        >
+          <li>
+            <a class="btn rounded-full gap-3 my-nav"
+              ><i class="fa-solid fa-house"></i>
+              <span class="my-nav-text">Home</span>
+            </a>
+          </li>
+          <li>
+            <a class="btn rounded-full gap-3 my-nav"
+              ><i class="fa-solid fa-bag-shopping"></i>
+              <span class="my-nav-text">Shop</span>
+            </a>
+          </li>
+          <li>
+            <a class="btn rounded-full gap-3 my-nav"
+              ><i class="fa-solid fa-list"></i>
+              <span class="my-nav-text">Categories</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <section
+      class="w-11/12 my-5 mx-auto grid md:grid-cols-12 grid-rows-2 min-h-screen gap-5"
+    >
+      <div class="col-span-9 row-span-3 rounded flex items-center">
+        <div class="hero">
+          <div class="hero-content flex-col lg:flex-row-reverse">
+            <img
+              src="https://cdn.pixabay.com/photo/2024/03/05/14/55/ai-generated-8614707_1280.jpg"
+              class="max-w-sm rounded-lg"
+            />
+            <div>
+              <h1 class="text-5xl font-bold">Plant for Sale</h1>
+              <p class="py-6">Starts with 1099 BDT</p>
+              <button class="btn btn-success text-white">Let's Buy</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-span-3 rounded">
+        <div class="card rounded-2xl p-6 border border-gray-200">
+          <h2 class="text-xl font-bold text-gray-800">Special Discount</h2>
+          <p class="text-gray-600 mt-2">
+            Get <span class="text-red-500 font-semibold">20% OFF</span> on your
+            next purchase!
+          </p>
+          <div
+            class="flex items-center justify-between mt-4 p-4 bg-gray-50 rounded-lg"
+          >
+            <span class="text-lg font-semibold text-gray-700">Code:</span>
+            <span
+              class="text-lg font-bold text-blue-600 bg-blue-100 px-4 py-1 rounded-lg"
+              >SAVE20</span
+            >
+          </div>
+          <button class="btn btn-success text-white w-full mt-4">
+            Redeem Now
+          </button>
+        </div>
+      </div>
+      <div class="col-span-3 rounded">
+        <div class="card rounded-2xl p-6 border border-gray-200">
+          <h2 class="text-xl font-bold text-gray-800">Special Discount</h2>
+          <p class="text-gray-600 mt-2">
+            Get <span class="text-red-500 font-semibold">50% OFF</span> on your
+            First delivery
+          </p>
+          <div
+            class="flex items-center justify-between mt-4 p-4 bg-gray-50 rounded-lg"
+          >
+            <span class="text-lg font-semibold text-gray-700">Code:</span>
+            <span
+              class="text-lg font-bold text-blue-600 bg-blue-100 px-4 py-1 rounded-lg"
+              >Free50</span
+            >
+          </div>
+          <button class="btn btn-success text-white w-full mt-4">
+            Redeem Now
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <main>
+      <h2
+        class="text-6xl text-center font-bold text-white bg-[url(https://plantscapedubai.com/cdn/shop/collections/Buy_Plants_Online_Cheap_Prices.jpg?v=1703681047)] bg-fixed"
+      >
+        <p class="backdrop-blur py-10 text-gray-700">
+          <i class="fa-solid fa-bag-shopping"></i> Let's Shop
+        </p>
+      </h2>
+
+      <section
+        id="product-container"
+        class="w-11/12 mx-auto py-10 grid grid-cols-3 gap-5"
+      ></section>
+    </main>
+
+    <script src="script.js"></script>
+    <script src="data.js"></script>
+  </body>
+</html>
